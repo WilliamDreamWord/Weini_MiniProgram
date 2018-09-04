@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的-新增收货地址",
+  "usingComponents": {
+    "new_popup": "/component/new_popup/new_popup"
+  }
+}

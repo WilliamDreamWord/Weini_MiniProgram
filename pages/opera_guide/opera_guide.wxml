@@ -1,0 +1,81 @@
+<!--pages/opera_guide/opera_guide.wxml-->
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 下单流程 -->
+<view class='row'>
+  <view class='row1'>
+    <text>请填写真实快递，取件相关信息</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+    <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>填写您的空闲时间，以便我们为你送货</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+     <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>点击“提交订单”</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+     <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>新增或确认收货地址</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+     <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>下单成功</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+     <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>可前往查看“我的订单”</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+     <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>快递送达签收</text>
+  </view>
+
+  <view class='row2'>
+    <image src='/images/down.png'></image>
+     <!-- <text>V</text> -->
+  </view>
+
+  <view class='row2'>
+    <text>线下支付</text>
+  </view>
+
+  <view class='row2'>
+    <button style='background-color:white;' bindtap='take_advice'>客服反馈</button>
+    <button style='background-color:white;'bindtap='join_us'>加入我们</button>
+  </view>
+
+  
+
+</view>

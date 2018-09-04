@@ -1,0 +1,138 @@
+<!--pages/new_order/new_order.wxml-->
+<import src="../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+<!-- 背景图 -->
+<view class='bg'>
+  <image class='img' src='/images/快递下单bg.png'></image>
+</view>
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+
+<!-- 快递下单界面上部区域表单 -->
+<form class='form' bindsubmit='formSubmit'>
+
+  <!-- 收货人信息提示 -->
+  <view class='row1_tip'>
+    <text>请填写收货人信息</text>
+  </view>
+
+  <!-- 学校选择框 -->
+  <view class='row'>
+    <text class='text0'>学校:</text>
+      <picker bindchange="bindPickerChange" name='school' value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    
+  </view>
+
+  <!-- 园区选择框 -->
+  <view class='row'>
+    <text class='text0'>园区:</text>
+    <view class='text1'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" name="park" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 宿舍输入框 -->
+  <view class='row'>
+    <text class='text0'>宿舍:</text>
+    <view class='text1'>
+      <input type='text' name='build' placeholder='八舍' value='{{str_build}}'></input>
+    </view>
+  </view>
+
+  <!-- 寝室输入框 -->
+  <view class='row'>
+    <text class='text0'>寝室:</text>
+    <view class='text1'>
+      <input type='text' name='dorm' placeholder='406' value='{{str_dorm}}'></input>
+    </view>
+  </view>
+
+  <!-- 姓名输入框 -->
+  <view class='row'>
+    <text class='text0'>姓名:</text>
+    <view class='text1'>
+      <input type='text' name='name' placeholder='请填写真实名字' value='{{str_name}}'></input>
+    </view>
+  </view>
+
+  <!-- 电话号码输入框 -->
+  <view class='row'>
+    <text class='text0'>手机:</text>
+    <view class='text1'>
+      <input type='number' name='phone' placeholder='请填写真实电话' value='{{str_phone}}'></input>
+    </view>
+  </view>
+
+  <!-- 加入我们按钮框 -->
+  <view class='row' bindtap='join'>
+    <text class='text3'>加入我们</text>
+  </view>
+
+  <!-- 中部提示界面 -->
+  <view class='tip_row'>
+    <text>******************郑****重****承****诺*****************</text>
+    <text>1.快递丢了，平台负责!</text>
+    <text>2.超过24(特殊情况48)小时，免单！</text>
+  </view>
+
+  <!-- 快递下单界面下部区域表单 -->
+
+  <!-- 提建议按钮框 -->
+  <view class='row1' bindtap='advice'>
+    <text class='text3'>客服反馈</text>
+  </view>
+
+  <!-- 快递信息提示 -->
+  <view class='row2_tip'>
+    <text>请填写快递信息</text>
+  </view>
+
+  <!-- 快递地址输入框 -->
+  <view class='row'>
+    <text class='text0'>地址:</text>
+    <view class='text1'>
+      <input type='text' name='address' placeholder='当前快递所在地址' value='{{str_address}}'></input>
+    </view>
+  </view>
+
+  <!-- 货物类型选择框 -->
+  <view class='row'>
+    <text class='text0'>类型:</text>
+    <view class='text1'>
+      <picker bindchange="bindTypeChange" name="category" value="{{index}}" range="{{arraytype}}">
+        <view class="picker">
+          {{arraytype[index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 提货码输入框 -->
+  <view class='row'>
+    <text class='text0'>货码:</text>
+    <view class='text1'>
+      <input type='text' name='code' placeholder='请填写真实取件码'></input>
+    </view>
+  </view>
+
+  <!-- 备注输入框 -->
+  <view class='row'>
+    <text class='text0'>备注:</text>
+    <view class='text1'>
+      <input type='text' name='remarks' placeholder='可填写收货人空闲时间等备注信息'></input>
+    </view>
+  </view>
+
+  <!-- 提交订单按钮 -->
+  <button class='button' type="primary" form-type="submit">提交订单</button>
+
+</form>

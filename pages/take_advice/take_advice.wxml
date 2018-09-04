@@ -1,0 +1,27 @@
+<!--pages/take_advice.wxml-->
+
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+
+<!-- 意见反馈框表单区域 -->
+<form class='form' bindsubmit='formSubmit'>
+
+  <!-- 反馈意见输入框 -->
+  <textarea class='row' type='text' name='advice' alue="{{form_info}}" placeholder='该功能正在维护中！需要反馈请联系客服' maxlength='-1'
+  auto-focus='true' adjust-position='true'>
+  </textarea>
+
+  <view class='row1'>
+    <button style="background-color:white;" formType="reset">重   置</button>
+    <button style="background-color:white;" formType="submit">提   交</button>
+  </view>
+
+  <view class='phone'>
+    <text>客服电话1: 13102304252（推荐!）</text>
+    <text>客服电话2: 13042373156</text>
+  </view>
+
+</form>

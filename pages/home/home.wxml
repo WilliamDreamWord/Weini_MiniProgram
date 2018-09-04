@@ -1,0 +1,97 @@
+<!--pages/home/home.wxml-->
+<!-- 导入自定义tabbar -->
+<import src="../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 服务次数提示框 -->
+<view class='row1'>
+  <text>为伱已累计服务(单/次):   </text>
+  <text class="total" style='color:black'>{{totalOrder}}</text>
+</view>
+
+<!-- 下单框 -->
+<form class='form' bindsubmit='formSubmit'>
+
+  <!-- 快递地址和货物类型 -->
+  <view class='row2'>
+    <view class='row2_1'>
+      <text>快 递 地 址*:</text>
+
+      <!-- 快递地址选择框 -->
+      <picker bindchange="bindPickerChange" name='pkg_address' value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class='row2_1'>
+      <text>货 物 类 型*:</text>
+
+      <!-- 货物类型选择框 -->
+      <picker bindchange="bindTypeChange" name="pkg_type" value="{{index1}}" range="{{arraytype}}">
+        <view class="picker">
+          {{arraytype[index1]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 提货码和提货名收货时间 -->
+  <view class='row3'>
+    <view class='row2_1'>
+      <text>提 货 码 *:</text>
+      <!-- 提货码输入框 -->
+      <input name='pkg_code' placeholder='A435' placeholder-style='text-align: center'></input>
+    </view>
+
+    <view class='row2_1'>
+      <text>提 货 名 *:</text>
+      <!-- 提货名输入框 -->
+      <input name='pkg_name' placeholder='张三' placeholder-style='text-align: center'></input>
+    </view>
+
+    <view class='row2_1'>
+      <text>收 货 时 间*:</text>
+      <!-- 收货时间输入框 -->
+      <input name='pkg_time' placeholder='如今天晚上7-11点之前' placeholder-class='text-align: center'></input>
+    </view>
+  </view>
+
+  <!-- 备注 -->
+  <view class='row4'>
+    <view class='row2_1'>
+      <text> 备  注 :</text>
+      <!-- 备注信息输入框 -->
+      <input name='pkg_remark' placeholder='备注信息放这里' placeholder-class='text-align: center'></input>
+    </view>
+
+    <!-- 客服反馈和加入我们 -->
+    <view class='row2_3'>
+      <text class='text1' bindtap='opera_guide'>操作手册</text>
+      <text class='text2' bindtap='join_us'>加入我们</text>
+    </view>
+
+    <!-- 提交订单按钮 -->
+    <button class='button' style='background: rgba(254, 255, 77, 0.3);' hover-class='green' form-type="submit">提交订单</button>
+  </view>
+
+    <!-- 条款提示框 -->
+    <new_popup id='new_popup' title='为伱申明' fisrt_content='1.快递丢了，平台负责! ' sencond_content='2.超过24(特殊情况48)小时，免单！'  btn_ok='朕知道了'  bind:close="_close">
+    </new_popup>
+
+    <!-- 下单地址提示框 -->
+    <popup id="popup" title='您当前的默认地址' fisrt_content='{{first_address}}' sencond_content='{{otherInfo}}' btn_no='重新选' btn_ok='朕确定' bind:error="_error" bind:success="_success">
+    </popup>
+
+    <!-- 空地址提示框 -->
+    <other_popup id='other_popup' title='客官请看' fisrt_content='系统检测到您还没有收货地址喔！' sencond_content=''  btn_ok='去添加'  bind:add="_add">
+    </other_popup>
+
+</form>

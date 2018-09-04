@@ -1,0 +1,136 @@
+/* pages/new_address/new_address.wxss */
+.all {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7FA; 
+}
+.form {
+  display: flex;
+  position: relative;
+  font-size: smaller;
+  width: 100%;
+  flex-direction: column;
+}
+.row {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 60rpx;
+}
+.row0 {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 121rpx;
+}
+.row0_1 {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+}
+.button {
+  display: inline-block;
+  position: absolute;
+  right: 0rpx;
+  height: 60rpx;
+  width: auto;
+  border: none;
+  line-height: 60rpx;
+  text-align: center;
+  color:  rgb(186, 94, 46);
+}
+.button::after{
+  border: none;
+}
+.row0_1 text {
+  display: inline-block;
+  line-height: 60rpx;
+  position: absolute;
+  width: 30%;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+  text-align: center;
+}
+.row0_1 input {
+  display: inline-block;
+  position: absolute;
+  line-height: 60rpx;
+  right: 0rpx;
+  border: 1px solid rgb(236, 236, 236);
+  width: 69%;
+  height: 60rpx;
+  text-align: center;
+}
+.row1 {
+  position: relative;
+  background-color: white;
+  margin-top: 50rpx;
+  width: 100%;
+  height: 182rpx;
+  flex-direction: row;
+}
+.row1_1 {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+}
+.row1_1 text{
+  display: inline-block;
+  line-height: 60rpx;
+  position: absolute;
+  width: 30%;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+  text-align: center;
+}
+.row1_1 picker {
+  display: inline-block;
+  position: absolute;
+  line-height: 60rpx;
+  right: 0rpx;
+  border: 1px solid rgb(236, 236, 236);
+  width: 69%;
+  height: 60rpx;
+  text-align: center;
+}
+.row1_1 input {
+  display: inline-block;
+  position: absolute;
+  line-height: 60rpx;
+  right: 0rpx;
+  border: 1px solid rgb(236, 236, 236);
+  width: 69%;
+  height: 60rpx;
+  text-align: center;
+}
+.row2 {
+  position: relative;
+  background-color: white;
+  margin-top: 50rpx;
+  width: 100%;
+  height: 60rpx;
+}
+.row2 text{
+  display: inline-block;
+  line-height: 60rpx;
+  position: absolute;
+  width: auto;
+  height: 60rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}
+#switch {
+  display: inline-block;
+  position: absolute;
+  right: 0rpx;
+  width: auto;
+  height: 60rpx;
+}
+#new_popup {
+  z-index: 9999;
+}

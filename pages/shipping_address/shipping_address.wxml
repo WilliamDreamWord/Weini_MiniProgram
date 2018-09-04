@@ -1,0 +1,57 @@
+<!--pages/shipping_address/shipping_address.wxml-->
+
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 新增收货地址按钮 -->
+<view class='row1' bindtap='new_address'>
+  <image src='/images/newAdress.png'></image>
+  <text>新增收货地址</text>
+</view>
+
+<!-- 收货地址列表 -->
+<view class='row' scroll-y="true">
+
+  <view class="item" wx:for="{{contentList}}" wx:for-index="index" wx:key="index">
+    <movable-area>
+
+      <movable-view out-of-bounds="true" direction="horizontal" x="{{item.xmove}}" inertia="true" data-itemindex="{{index}}" bindchange="handleMovableChange">
+
+        <view id='{{item.id}}' class='row0'>
+          <!-- 头像图标 -->
+          <text class='row2_1'>{{item.receiverSmallArea}}</text>
+
+          <!-- 收货地址详细信息 -->
+          <view class='row2_2' bindtap='selectAddress' data-item='{{item}}'>
+            <view class='row2_3'>
+              <view class='row2_4'>
+                <text>{{item.receiverName}}</text>
+                <text id='text1'>{{item.receiverMobile}}</text>
+              </view>
+              <view class='row2_5'>
+                <text id='text2' hidden='{{item.status == 1 ? false : true}}'>默认</text>
+                <text id='text3'>{{item.receiverLargeArea}} {{item.receiverDoor}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 编辑框 -->
+          <view class='row2_6' bindtap='edit_address' data-item='{{item}}'>
+            <text>{{edit}}</text>
+          </view>
+        </view>
+
+      </movable-view>
+
+    </movable-area>
+
+    <!-- 左滑删除框 -->
+    <view class="delete-btn" data-index="{{index}}" data-id='{{item.id}}' bindtap="handleDeleteAddress">删除</view>
+
+  </view>
+
+</view>
+
+<!-- 地址重选框 -->
+<popup id="popup" title='您选择的地址' fisrt_content='{{selectedAddress}}' sencond_content='{{otherInfo}}'  btn_no='选错了' btn_ok='选好了' bind:error="_error" bind:success="_success">
+</popup>

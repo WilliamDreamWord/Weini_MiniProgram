@@ -1,0 +1,48 @@
+<!--pages/mine/mine.wxml-->
+<!-- 导入自定义tabbar -->
+<import src="../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<view class='row'>
+  <!-- 图标和昵称 -->
+  <view class='row1'>
+    <open-data id="userInfo" type="userAvatarUrl"></open-data>
+    <open-data type="userNickName"></open-data>
+  </view>
+
+  <!-- 我的订单和收货地址 -->
+  <view class='row2'>
+    <view class='row2_1' bindtap='history_order'>
+      <text>我 的 订 单</text>
+      <image src="{{src}}"></image>
+    </view>
+    <view class='row2_1' bindtap='shipping_address'>
+      <text>收 货 地 址</text>
+      <image src="{{src}}"></image>
+    </view>
+  </view>
+
+  <!-- 加入我们 -->
+  <view class='row3'>
+    <view class='row2_1' bindtap='join_us'>
+      <text>加 入 我 们</text>
+      <image src='{{src}}'></image>
+    </view>
+  </view>
+
+  <!-- 使用手册和客服反馈 -->
+  <view class='row4'>
+    <view class='row2_1' bindtap='opera_guide'>
+      <text>使 用 手 册</text>
+      <image src='{{src}}'></image>
+    </view>
+    <view class='row2_1' bindtap='take_advice'>
+      <text>客 服 反 馈</text>
+      <image src='{{src}}'></image>
+    </view>
+  </view>
+
+</view>

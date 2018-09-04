@@ -1,0 +1,9 @@
+<!--pages/news/mews.wxml-->
+<import src="../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>

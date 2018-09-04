@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/news/mews",
+    "pages/mine/mine",
+    "pages/shipping_address/shipping_address",
+    "pages/edit_address/edit_address",
+    "pages/history_order/history_order",
+    "pages/new_address/new_address",
+    "pages/opera_guide/opera_guide",
+    "pages/join_us/join_us",
+    "pages/take_advice/take_advice",
+    "pages/new_order/new_order",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "为伱",
+    "navigationBarTextStyle": "black"
+  }
+}

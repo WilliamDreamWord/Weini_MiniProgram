@@ -1,0 +1,74 @@
+<!--pages/new_address/new_address.wxml-->
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+
+<!-- 新增收货地址表单 -->
+<form class='form' bindsubmit='formSubmit'>
+
+  <!-- 提交订单按钮 -->
+  <view class='row'>
+    <button class='button' style='background: white;' form-type="submit">保存</button>
+  </view>
+
+  <!-- 收货人和电话 -->
+  <view class='row0'>
+
+    <view class='row0_1'>
+      <text>收 货 人*:</text>
+      <!-- 收货人输入框 -->
+      <input name='ads_name' placeholder-style='text-align: center'></input>
+    </view>
+
+    <view class='row0_1'>
+      <text>电  话*:</text>
+      <!-- 电话输入框 -->
+      <input name='ads_phone' type="number" placeholder-style='text-align: center'></input>
+    </view>
+
+  </view>
+
+  <!-- 学校园区详细地址 -->
+  <view class='row1'>
+    <!-- 学校 -->
+    <view class='row1_1'>
+      <text>学   校 *:</text>
+      <!-- 学校选择器 -->
+      <picker bindchange="bindPickerChange" name='ads_LargerArea_id' value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 园区 -->
+    <view class='row1_1'>
+      <text>园  区 *:</text>
+      <!-- 园区选择器 -->
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" name="ads_Medium_Small_id" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 详细地址 -->
+    <view class='row1_1'>
+      <text>详细地址*:</text>
+      <!-- 详细地址输入框 -->
+      <input name='ads_detail' placeholder='北区橘园八舍406' placeholder-style='text-align: center'></input>
+    </view>
+  </view>
+
+  <!-- 设为默认地址 -->
+  <view class='row2'>
+    <text>设为默认地址</text>
+    <switch id='switch' name='ads_first' bindchange='default_address'></switch>
+  </view>
+</form>
+
+<!-- 温馨提示框 -->
+<new_popup id='new_popup' title='温馨提示' fisrt_content='小的会自动将该地址作为默认地址喔' sencond_content='您可以之后自行修改默认地址' btn_ok='朕知道了' bind:close="_close">
+</new_popup>

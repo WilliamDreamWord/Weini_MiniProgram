@@ -1,0 +1,71 @@
+<!--pages/join_us/join_us.wxml-->
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+
+<!-- 申请人人信息表单 -->
+<form class='form' bindsubmit='formSubmit'>
+
+  <!-- 姓名和性别 -->
+  <view class='row0'>
+    <!-- 申请人姓名输入框 -->
+    <view class='row'>
+      <text>姓  名 *:</text>
+      <input type='text' name='name' value="{{form_info}}" placeholder='请填写真实姓名' placeholder-style='text-align: center'></input>
+    </view>
+
+    <!-- 性别选择框 -->
+    <view class='row'>
+      <text class='text0'>性  别 *:</text>
+      <radio-group class="radio-group" bindchange="radioChange" name="gender">
+        <label class="radio" wx:for="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+
+  <!-- qq和电话 -->
+  <view class='row0'>
+    <!-- qq输入框 -->
+    <view class='row'>
+      <text>Q  Q *:</text>
+      <input type='text' name='qq' value="{{form_info}}" placeholder='请填写真实QQ' placeholder-style='text-align: center'></input>
+    </view>
+
+    <!-- 电话输入框 -->
+    <view class='row'>
+      <text>电  话 *:</text>
+      <input type='number' name='phone' value="{{form_info}}" placeholder='请填写真实电话' placeholder-style='text-align: center'></input>
+    </view>
+  </view>
+
+
+  <!-- 住址输入框 -->
+  <view class='row2'>
+    <text>住  址 *:</text>
+    <input type='text' name='address' value="{{form_info}}" placeholder='北区橘园八舍406' placeholder-style='text-align: center'></input>
+  </view>
+
+  <!-- 重置和提交 -->
+  <view class='row0'>
+    <!-- 重置框 -->
+    <button style="background-color:white;" formType="reset">重 置</button>
+    <!-- 提交框 -->
+    <button style="background-color:white;" formType="submit">提 交</button>
+  </view>
+
+    <!-- 消息提示框v1.0 -->
+  <view class='row1_tip1'>
+    <text>该功能正在维护中,可联系QQ:1263462952 备注:"加入我们"</text>
+  </view>
+  <!-- 申请人信息提示 -->
+  <!-- <view class='row1_tip'>
+    <text>请填写申请人信息</text>
+  </view> -->
+
+
+</form>

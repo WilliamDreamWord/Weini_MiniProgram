@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "为伱",
+  "usingComponents": {
+    "new_popup": "/component/new_popup/new_popup",
+    "popup": "/component/popup/popup",
+    "other_popup": "/component/other_popup/other_popup"
+  }
+}

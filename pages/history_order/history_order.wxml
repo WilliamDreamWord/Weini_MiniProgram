@@ -1,0 +1,38 @@
+<!--pages/history_order/history_order.wxml-->
+
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<view class='table'>
+  <!-- 提示信息 -->
+  <view class='row'>
+    <text class='text0'>日期</text>
+    <text class='text1'>订单编号</text>
+    <text class='text2'>订单状态</text>
+  </view>
+
+  <!-- 订单内容叠加 -->
+  <view class='content' scroll-y="true">
+
+    <!-- 循环表段 -->
+    <!-- 订单信息模块 -->
+    <ul class="content_ul">
+      <view class='item' wx:for="{{contentlist}}" wx:key="index" bindtap='showOrder_detail' data-item='{{item}}'>
+        <!-- 订单的大概信息 -->
+        <view class='order_item'>
+          <text class='text0'>{{item.createTime}}</text>
+          <text class='text1'>{{item.orderNo}}</text>
+          <view class='text2'>
+            <text>{{item.statusDesc}}</text>
+          </view>
+        </view>
+
+      </view>
+    </ul>
+
+  </view>
+</view>
+
+<!-- 订单详细框 -->
+<hisOrder_popup id="hisOrder_popup" title='订单详情' fisrt_content='{{first_detail}}' second_content='{{second_detail}}' third_content='{{third_detail}}' fourth_content='{{fourth_detail}}' fifth_content='{{fifth_detail}}' btn_ok='朕明白了' bind:close="_close">
+</hisOrder_popup>

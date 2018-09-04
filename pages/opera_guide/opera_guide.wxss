@@ -1,0 +1,64 @@
+/* pages/opera_guide/opera_guide.wxss */
+.all {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7FA; 
+}
+.row {
+  display: flex;
+  position: relative;
+  width: 100%;
+  font-size: smaller;
+  flex-direction: column;
+}
+.row1 {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  height: 60rpx;
+  /* border: 1px solid rgb(236, 236, 236); */
+}
+.row1 text {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.row2 {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  height: 60rpx;
+  /* border: 1px solid rgb(236, 236, 236); */
+  text-align: center;
+}
+.row2 image {
+  display: inline-block;
+  position: absolute;
+  width: 30rpx;
+  height: 20rpx;
+  margin-top: 20rpx;
+}
+.row2 text {
+  display: inline-block;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.row2 button {
+  display: inline-block;
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.row2 button::after {
+  border: none;
+}
+

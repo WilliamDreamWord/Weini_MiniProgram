@@ -1,0 +1,70 @@
+<!--pages/edit_address/edit_address.wxml-->
+<!-- 背景颜色为仿微信灰白色 -->
+<view class='all'></view>
+
+<!-- 顶部消息提示区域  -->
+<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+
+<!-- 新增收货地址表单 -->
+<form class='form' bindsubmit='formSubmit'>
+
+  <!-- 提交订单按钮 -->
+  <view class='row'>
+    <button class='button'  style='background: white;' form-type="submit">保存</button>
+  </view>
+
+  <!-- 收货人和电话 -->
+  <view class='row0'>
+
+    <view class='row0_1'>
+      <text>收 货 人:</text>
+      <!-- 收货人输入框 -->
+      <input name='af_ads_name' placeholder='{{pre_ads_name}}' placeholder-style='text-align: center'></input>
+    </view>
+
+    <view class='row0_1'>
+      <text>电  话:</text>
+      <!-- 电话输入框 -->
+      <input name='af_ads_phone' type="number" placeholder='{{pre_ads_phone}}'placeholder-style='text-align: center'></input>
+    </view>
+
+  </view>
+
+  <!-- 学校园区详细地址 -->
+  <view class='row1'>
+    <!-- 学校 -->
+    <view class='row1_1'>
+      <text>学   校 :</text>
+      <!-- 学校选择器 -->
+      <picker bindchange="bindPickerChange" name='af_ads_largerArea_id' value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 园区 -->
+    <view class='row1_1'>
+      <text>园  区 :</text>
+      <!-- 园区选择器 -->
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" name="af_ads_otherArea_id" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
+        </view>
+      </picker>
+    </view>
+
+    <!-- 详细地址 -->
+    <view class='row1_1'>
+      <text>详细地址:</text>
+      <!-- 详细地址输入框 -->
+      <input name='af_ads_address' placeholder='{{pre_ads_address}}' placeholder-style='text-align: center;'></input>
+    </view>
+  </view>
+
+  <!-- 设为默认地址 -->
+  <view class='row2'>
+    <text>设为默认地址</text>
+    <switch id='switch' name='af_ads_isFirst' checked='{{pre_ads_isFirst == 1 ? true : false}}' bindchange='default_address'></switch>
+  </view>
+</form>

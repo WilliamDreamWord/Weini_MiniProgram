@@ -1,0 +1,100 @@
+/* pages/join_us/join_us.wxss */
+.all {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7FA; 
+}
+.form {
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  font-size: smaller;
+}
+.row0 {
+  position: relative;
+  background-color: white;
+  height: 121rpx;
+  width: 100%;
+  margin-top: 60rpx;
+}
+.row {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+}
+.row0 button {
+  position: relative;
+  width: 100%;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+  line-height: 60rpx;
+}
+.row text {
+  display: inline-block;
+  position: absolute;
+  width: 30%;
+  flex-grow: 1;
+  line-height: 60rpx;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+  text-align: center;
+}
+.row input {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  line-height: 60rpx;
+  right: 0rpx;
+  width: 69%;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+}
+.row radio-group {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  line-height: 60rpx;
+  right: 0rpx;
+  width: 69%;
+  border: 1px solid rgb(236, 236, 236);
+}
+.row2 {
+  position: relative;
+  background-color: white;
+  height: 61rpx;
+  width: 100%;
+  margin-top: 60rpx;
+}
+.row2 text {
+  display: inline-block;
+  position: absolute;
+  width: 30%;
+  flex-grow: 1;
+  line-height: 60rpx;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+  text-align: center;
+}
+.row2 input {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  line-height: 60rpx;
+  right: 0rpx;
+  width: 69%;
+  height: 60rpx;
+  border: 1px solid rgb(236, 236, 236);
+}
+.row1_tip1 {
+  position: relative;
+  text-align: center;
+  margin-top: 50rpx;
+  font-size: 28rpx;
+}

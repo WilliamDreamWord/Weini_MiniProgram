@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的-我的订单",
+    "usingComponents": {
+      "hisOrder_popup": "/component/hisOrder_popup/hisOrder_popup"
+    }
+}
